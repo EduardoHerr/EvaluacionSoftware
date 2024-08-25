@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clAdmin.cs" />
     <Compile Include="ctlogin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
