@@ -18,9 +18,12 @@ namespace EvaluacionSoftware.Vista
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            if (log.registroExistente(txtuser.Text, txtpass.Text))
+            int id = log.registroExistente(txtuser.Text, txtpass.Text);
+            if (id>0)
             {
-                lblMensaje.Text = "Existente";
+                Session["id_usuario"] = id;
+                Response.Redirect("~/Vista/viewInicio.aspx");
+                
             }
             else
             {

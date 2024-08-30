@@ -12,35 +12,41 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-            <header class="main-header">
-                <div class="main-cont">
+
+        <div style=" display:flex; width:100%;height:100vh;align-items:center;justify-content:center;">
+            <div class="row mx-auto p-2" id="formu">
+                <div class="col">
                     <div class="desc-header">
-                        <img src="img/font3.jpg" alt="image school">
-                        <p>E-Valúa</p>
+                        <img src="img/Evalua.jpeg" alt="imagen logo Evualua" />
+
                     </div>
                 </div>
-                <div class="cont-header">
-                    <asp:Label ID="lblMensaje" runat="server" Text="">    <h1>!Que bueno tenerte de vuelta!</h1></asp:Label>
-                    <div class="form">
 
-                        <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                <div class="col-5">
+                    <div>
+                        <div>
+                       <center> <asp:Label ID="lblMensaje" runat="server" Text="!Que bueno tenerte de vuelta!"></asp:Label></center>
+                            <br />
 
-                                <label for="usuario">Usuario</label>
-                                <asp:TextBox ID="txtuser" CssClass="form-control" placeholder="Nombre de Usuario" runat="server"></asp:TextBox>
-
-                                <label for="password">Contraseña</label>
-                                <asp:TextBox ID="txtpass" CssClass="form-control" TextMode="Password" placeholder="Contraseña" runat="server"></asp:TextBox>
-                                <hr />
-                                <asp:Button ID="btnLogin" runat="server" CssClass="btn btn-success" OnClick="btnLogin_Click" Text="Iniciar Sesion" />
-
+                        <label>Usuario</label>
+                        <asp:TextBox ID="txtuser" CssClass="form-control w-75" placeholder="Nombre de Usuario" runat="server"></asp:TextBox>
+                        <br />
+                        <label>Contraseña</label>
+                        <asp:TextBox ID="txtpass" CssClass="form-control w-75" TextMode="Password" placeholder="Contraseña" runat="server"></asp:TextBox>
+                        <br />
+                        <div class="row">
+                            <div class="col">
+                                <asp:Button ID="btnRegistar" runat="server" CssClass="btn btn-primary" Text="Registarse" />
                             </div>
-
+                            <div class="col">
+                                <asp:Button ID="btnLogin" runat="server" CssClass="btn btn-success" OnClick="btnLogin_Click" Text="Iniciar Sesion" />
+                            </div>
                         </div>
                     </div>
+                        </div>
                 </div>
-            </header>
+
+            </div>
         </div>
     </form>
 

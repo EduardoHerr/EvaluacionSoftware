@@ -13,11 +13,11 @@ namespace Controlador
     public class ctlogin
     {
         modeloConexion db = new modeloConexion();
-        public bool registroExistente(string user, string pass)
-        {            
+        public int registroExistente(string user, string pass)
+        {
             db.abrirConexion();
-            bool exist;         
-            string query = "SELECT * FROM tbl_persona WHERE per_ci = @ci AND per_contrasena = @pass";
+            int exist=0;
+            string query = "SELECT id_usuario FROM tbl_persona WHERE per_ci = @ci AND per_contrasena = @pass";
             SqlCommand cmd = new SqlCommand(query, db.con);
 
             cmd.Parameters.AddWithValue("@ci", user);
@@ -25,18 +25,15 @@ namespace Controlador
             cmd.CommandType = CommandType.Text;
 
             SqlDataReader rs = cmd.ExecuteReader();
-            if (rs.Read())
+            
+            while (rs.Read())
             {
-                exist = true;
+               exist  = Convert.ToInt16( rs["id_usuario"]);
+            
             }
-            else
-            {
-                exist = false;
-            }
-
-
             db.cerrarConexion();
             return exist;
+
         }
 
 

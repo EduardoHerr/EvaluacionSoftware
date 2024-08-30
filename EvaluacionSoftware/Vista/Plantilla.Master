@@ -8,142 +8,131 @@
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <meta name="theme-color" content="#f2f2f2" />
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 
 </head>
 <body class="app sidebar-mini">
-    <header class="app-header">
-        <a class="app-header__logo">E-Valúa</a>
-        <a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"><i class="fas fa-bars"></i></a>
-        <ul class="app-nav">
-            <li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-user fa-lg"></i></a>
-                <ul class="dropdown-menu settings-menu dropdown-menu-right">
-                    <li><a class="dropdown-item" href="logout.php"><i class="fa fa-sign-out fa-lg"></i>Cerrar Sesion</a></li>
-                </ul>
-            </li>
-        </ul>
-    </header>
 
-    <!-- Menu Lateral-->
-    <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
-    <aside class="app-sidebar">
-      <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="img/user1.jpeg" alt="User Image">
-        <div>
-          <p class="app-sidebar__user-name"> </p>
-          <p class="app-sidebar__user-designation"></p>
+    <!--Menu sidebar con Bootstrap -->
+    <div class="container-fluid">
+        <div class="row flex-nowrap">
+            <div class="col-auto col-md-2 col-xl-2 px-sm-2 px-0 bg-dark">
+                <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                    <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                        <span class="fs-5 d-none d-sm-inline">E-Valúa</span>
+                    </a>
+                    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link align-middle px-0">
+                                <i class="fs-4 bi-house"></i><span class="ms-1 d-none d-sm-inline">Inicio</span>
+                            </a>
+                        </li>
+
+                        <!--Vista Administrador-->
+
+                        <asp:Panel ID="pnlAdmin" runat="server">
+                            <li>
+                                <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                                    <i class="fs-4 bi-speedometer2"></i><span class="ms-1 d-none d-sm-inline">Dashboard</span> </a>
+                                <ul class="collapse  nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
+                                    <li class="w-100">
+                                        <a href="#" class="nav-link px-0">
+                                            <span class="d-none d-sm-inline">Item</span> 1 </a>
+
+                                    </li>
+                                    <li>
+                                        <a href="#" class="nav-link px-0"><span class="d-none d-sm-inline">Item</span> 2 </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link px-0 align-middle">
+                                    <i class="fs-4 bi-table"></i><span class="ms-1 d-none d-sm-inline">Orders</span></a>
+                            </li>
+                            <li>
+                                <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
+                                    <i class="fs-4 bi-bootstrap"></i><span class="ms-1 d-none d-sm-inline">Bootstrap</span></a>
+                                <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
+                                    <li class="w-100">
+                                        <a href="#" class="nav-link px-0"><span class="d-none d-sm-inline">Item</span> 1</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="nav-link px-0"><span class="d-none d-sm-inline">Item</span> 2</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                                    <i class="fs-4 bi-grid"></i><span class="ms-1 d-none d-sm-inline">Products</span> </a>
+                                <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
+                                    <li class="w-100">
+                                        <a href="#" class="nav-link px-0"><span class="d-none d-sm-inline">Product</span> 1</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="nav-link px-0"><span class="d-none d-sm-inline">Product</span> 2</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="nav-link px-0"><span class="d-none d-sm-inline">Product</span> 3</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="nav-link px-0"><span class="d-none d-sm-inline">Product</span> 4</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link px-0 align-middle">
+                                    <i class="bi bi-box-arrow-right"></i><span class="ms-1 d-none d-sm-inline">Cerrar Sesion</span> </a>
+                            </li>
+
+                        </asp:Panel>
+
+                        <!--Vista Docente-->
+
+
+                        <!--Vista Alumno-->
+                        <li>
+                            <a href="#" class="nav-link px-0 align-middle">
+                                <i class="fs-4 bi-table"></i><span class="ms-1 d-none d-sm-inline">Mis Cursos</span></a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+
+
+
+
+
+
+            <div class="col py-4">
+                <form id="form1" runat="server">
+                    <div>
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </form>
+            </div>
         </div>
-      </div>
-      <ul class="app-menu">
-      
-        <li class="treeview">
-            <a class="app-menu__item" href="#" data-toggle="treeview">
-              <i class="app-menu__icon fa fa-users"></i>
-              <span class="app-menu__label">Usuarios</span>
-              <i class="treeview-indicator fa fa-angle-right"></i>
-            </a>
-            <ul class="treeview-menu">
-              <li><a class="treeview-item" href="lista_usuarios.php"><i class="icon fa fa-circle-o"></i>Lista de Usuarios</a></li>
-            </ul>
-        </li>
-        
-
-        
-          <li class="treeview">
-            <a class="app-menu__item" href="#" data-toggle="treeview">
-            <i class="app-menu__icon fas fa-chalkboard-teacher"></i>
-              <span class="app-menu__label">Instructores</span>
-              <i class="treeview-indicator fa fa-angle-right"></i>
-            </a>
-            <ul class="treeview-menu">
-              <li><a class="treeview-item" href="lista_instructores.php"><i class="icon fa fa-circle-o"></i>Lista de Instructores</a></li>
-            </ul>
-        </li>
-        
-
-        
-          <li class="treeview">
-            <a class="app-menu__item" href="#" data-toggle="treeview">
-              <i class="app-menu__icon fa fa-user-graduate"></i>
-              <span class="app-menu__label">Alumnos</span>
-              <i class="treeview-indicator fa fa-angle-right"></i>
-            </a>
-            <ul class="treeview-menu">
-              <li><a class="treeview-item" href="lista_Alumnos.php"><i class="icon fa fa-circle-o"></i>Lista de Alumnos</a></li>
-            </ul>
-        </li>
-        
-
-        
-        <li>
-            <a class="app-menu__item" href="lista_Cursos.php">
-              <i class="app-menu__icon fas fa-check-circle"></i>
-              <span class="app-menu__label">Cursos</span>
-            </a>
-        </li>
-        
-
-        
-          <li class="treeview">
-            <a class="app-menu__item" href="#" data-toggle="treeview">
-              <i class="app-menu__icon fa fa-user-graduate"></i>
-              <span class="app-menu__label">Asignar Evaluaciones</span>
-              <i class="treeview-indicator fa fa-angle-right"></i>
-            </a>
-            <ul class="treeview-menu">
-              <li><a class="treeview-item" href="lista_Evaluaciones.php"><i class="icon fa fa-circle-o"></i>Lista de Evaluaciones</a></li>
-            </ul>
-            <ul class="treeview-menu">
-              <li><a class="treeview-item" href=""><i class="icon fa fa-circle-o"></i>Gestionar Preguntas</a></li>
-            </ul>
-            <ul class="treeview-menu">
-              <li><a class="treeview-item" href=""><i class="icon fa fa-circle-o"></i>Gestionar Respuestas</a></li>
-            </ul>
-        </li>
-        
-        
-        
-        <li>
-            <a class="app-menu__item" href="">
-              <i class="app-menu__icon fas fa-check-circle"></i>
-              <span class="app-menu__label">Matriculas</span>
-            </a>
-        </li>
-        
-        <li>
-        <li>
-            <a class="app-menu__item" href="logout.php">
-              <i class="app-menu__icon fa fa-sign-out"></i>
-              <span class="app-menu__label">Cerrar Sesion</span>
-            </a>
-        </li>
-      </ul>
-    </aside>
-
-
-    <form id="form1" runat="server">
-        <div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
-        </div>
-    </form>
+    </div>
 
 
 
-     <!-- Esencial para que la pagina funcione-->
-<script src="js/jquery-3.3.1.min.js"></script>
- <script src="js/popper.min.js"></script>
- <script src="js/bootstrap.min.js"></script>
- <script src="js/fontawesome.js"></script>
- <!--<script src="https://kit.fontawesome.com/16e860252b.js" crossorigin="anonymous"></script>-->
- <script src="js/main.js"></script>
- <!-- The javascript plugin to display page loading on top-->
- <script src="js/plugins/pace.min.js"></script>
- <script type="text/javascript" src="js/plugins/sweetalert.min.js"></script>
-<!-- Data table plugin-->
-<script type="text/javascript" src="js/plugins/jquery.dataTables.min.js"></script>
- <script type="text/javascript" src="js/plugins/dataTables.bootstrap.min.js"></script>
- 
+
+
+    <!-- Esencial para que la pagina funcione-->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/fontawesome.js"></script>
+    <!--<script src="https://kit.fontawesome.com/16e860252b.js" crossorigin="anonymous"></script>-->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+
 
 </body>
 
