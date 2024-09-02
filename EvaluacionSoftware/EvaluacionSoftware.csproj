@@ -74,6 +74,7 @@
     <Content Include="Vista\alu_prueba.aspx" />
     <Content Include="Vista\css\style.css" />
     <Content Include="Vista\css\styleLogin.css" />
+    <Content Include="Vista\img\ecursos.png" />
     <Content Include="Vista\img\Evalua.jpeg" />
     <Content Include="Vista\img\font3.jpg" />
     <Content Include="Vista\img\user1.jpeg" />

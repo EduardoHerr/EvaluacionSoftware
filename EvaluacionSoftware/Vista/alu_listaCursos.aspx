@@ -5,19 +5,24 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container">
-        <div class="row">
+        <div class="d-flex flex-wrap justify-content-center">
             <asp:Repeater ID="rptCursos" runat="server">
                 <ItemTemplate>
-                    <div class="card" style="width: 18rem;">
+                    <div class="card">
+                        <img src="img/ecursos.png" class="card-img-top" alt="">
                         <div class="card-body">
-                            <h5 class="card-title"><%#DataBinder.Eval(Container.DataItem,"cur_nombrecurso") %> </h5>
-                            <p class="card-text"><%#DataBinder.Eval(Container.DataItem,"cur_descripcion") %>  </p>
-                            <asp:LinkButton CssClass="btn btn-outline-primary " ID="lnkAgregar" runat="server">Unirme</asp:LinkButton>
+                            <h5 class="card-title">
+                                <%#DataBinder.Eval(Container.DataItem,"cur_nombrecurso") %>
+                            </h5>
+                            <p class="card-text">
+                                <%#DataBinder.Eval(Container.DataItem,"cur_descripcion") %>
+                            </p>
+                            <asp:LinkButton CssClass="btn btn-primary btn-matricula" ID="lnkAgregar" runat="server">
+                                Unirme</asp:LinkButton>
                         </div>
                     </div>
                 </ItemTemplate>
             </asp:Repeater>
         </div>
-
     </div>
 </asp:Content>

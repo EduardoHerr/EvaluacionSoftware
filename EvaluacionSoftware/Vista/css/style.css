@@ -99,3 +99,71 @@ body {
         .dropdown a:hover {
             background-color: #3b5998;
         }
+
+/* ESTILO DE TARJETAs*/
+.card {
+    margin: 10px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+    flex: 0 0 calc(33.333% - 20px);
+    /* Para distribuir en 3 columnas igualmente */
+    max-width: calc(33.333% - 20px);
+}
+
+    .card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        /* Ajusta cómo la imagen se ajusta dentro de su contenedor */
+    }
+
+.card-body {
+    padding: 20px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .card {
+        flex: 0 0 calc(50% - 20px);
+        /* Para distribuir en 2 columnas en pantallas pequeñas */
+        max-width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 576px) {
+    .card {
+        flex: 0 0 calc(100% - 20px);
+        /* Una columna en pantallas extra pequeñas */
+        max-width: calc(100% - 20px);
+    }
+}
+
+/* Estilo boton MATRICULAR*/
+.btn-matricula {
+    background-color: #078f5f;
+    background-image: linear-gradient(to bottom, #078f5f, #055c3c);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    .btn-matricula:hover {
+        filter: brightness(90%);
+    }
+
+/* Estilos responsivos */
+@media only screen and (max-width: 600px) {
+
+    .btn.btn-matricula {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
